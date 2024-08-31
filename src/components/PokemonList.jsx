@@ -19,20 +19,6 @@ function PokemonList() {
     }
   };
 
-  // useEffect(() => {
-  //   const fetchPokemons = async () => {
-  //     try {
-  //       const response = await axios.get('https://pokeapi.co/api/v2/pokemon');
-  //       setPokemons(response.data.results)
-  //       console.log(response.data.results);
-        
-  //     } catch(error){
-  //       console.log(('Erro ao buscar pokemons: ', error));
-  //     }
-  //   };
-
-  //   fetchPokemons();
-  // }, []);
 
   return (
     <div>
@@ -61,45 +47,8 @@ function PokemonList() {
           <p>Tipo: {pokemon.types.map((type) => type.type.name).join(', ')}</p>
         </div>
       )}
-      {/* <Pokemon />
-        { pokemons.map((item) => (
-          <Pokemon key={item.name} data={item}/>
-        ))}
-       */}
     </div>
   )
 }
-
-// const Pokemon = ({data}) => {
-//   const [details, setDetails] = useState(null);
-
-//   const fetchIndividualPokemon = () => {
-//     axios.get(data.url).then((response) => setDetails(response.data));
-//     console.log(data.url);
-//   };
-
-//   useEffect(() => {
-//     fetchIndividualPokemon();
-//   }, []);
-
-//   if (details === null) {
-//     return <div>Carregando...</div>
-//   }
-
-//   return (
-//     <div>
-//       <img 
-//         src={details.sprites.front_default}
-//       />
-
-//       <div style={ {display: 'flex'}}>
-//         <p>Nome: {details.name} </p>
-//         <p>Tipo: {details.types.map((type) => type.type.name).join(', ')}</p>
-//       </div>
-    
-//     </div>
-
-//   )
-// };
 
 export default PokemonList;
